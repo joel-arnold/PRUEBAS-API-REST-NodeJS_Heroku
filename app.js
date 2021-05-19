@@ -5,4 +5,4 @@ console.clear()
 
 const servidor = new Servidor();
 
-servidor.listen();
+servidor.escuchar();

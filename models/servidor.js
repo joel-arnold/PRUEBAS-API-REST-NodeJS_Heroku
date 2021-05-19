@@ -10,7 +10,8 @@ class Server {
         this.port = process.env.PORT;
 
         this.paths = {
-            categorias: '/api/categorias'
+            categorias: '/api/categorias',
+            materias: '/api/materias'
         }
 
 
@@ -44,9 +45,10 @@ class Server {
 
     routes() {
         this.app.use(this.paths.categorias, require('../routes/categorias'));
+        this.app.use(this.paths.materias, require('../routes/materias'));
     }
 
-    listen() {
+    escuchar() {
         this.app.listen(this.port, () => {
             console.log('Servidor corriendo en puerto', this.port);
         });
