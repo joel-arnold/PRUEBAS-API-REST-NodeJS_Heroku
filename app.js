@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { Servidor } = require('./models');
+const { Servidor } = require('./modelos');
 
 console.clear()
 

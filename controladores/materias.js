@@ -1,5 +1,5 @@
 const { response } = require('express');
-const { Materia } = require('../models');
+const { Materia } = require('../modelos');
 
 
 const obtenerMaterias = async (req, res = response) => {

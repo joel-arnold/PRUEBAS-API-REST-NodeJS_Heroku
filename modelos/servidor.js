@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 
-const { conexionBD } = require('../database/config');
+const { conexionBD } = require('../baseDeDatos/config');
 
 class Servidor {
 
@@ -43,7 +43,7 @@ class Servidor {
     }
 
     rutas() {
-        this.aplicacion.use(this.directorios.materias, require('../routes/materias'));
+        this.aplicacion.use(this.directorios.materias, require('../rutas/materias'));
     }
 
     escuchar() {
@@ -53,8 +53,5 @@ class Servidor {
     }
 
 }
-
-
-
 
 module.exports = Servidor;

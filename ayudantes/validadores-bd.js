@@ -1,4 +1,4 @@
-const { Materia } = require('../models');
+const { Materia } = require('../modelos');
 
 
 const existeMateriaPorId = async (id) => {
