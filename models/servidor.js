@@ -7,7 +7,7 @@ class Servidor {
 
     constructor() {
         this.aplicacion = express();
-        this.puerto = process.env.PORT;
+        this.puerto = process.env.PUERTO;
 
         this.directorios = {
             categorias: '/api/categorias',
