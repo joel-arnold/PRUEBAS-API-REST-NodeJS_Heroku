@@ -1,12 +1,12 @@
 
 
 const Categoria = require('./categoria');
-const Server = require('./server');
+const Servidor = require('./servidor');
 
 
 
 module.exports = {
     Categoria,
-    Server
+    Servidor
 }
 

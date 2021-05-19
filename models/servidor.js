@@ -9,7 +9,6 @@ class Server {
         this.app = express();
         this.port = process.env.PORT;
 
-        // TODO No usado por completo
         this.paths = {
             categorias: '/api/categorias'
         }
@@ -38,8 +37,8 @@ class Server {
         // Lectura y parseo del body
         this.app.use(express.json());
 
-        // ! Directorio Público
-        this.app.use(express.static('public'));
+        // Directorio Público
+        this.app.use(express.static('publico'));
 
     }
 
