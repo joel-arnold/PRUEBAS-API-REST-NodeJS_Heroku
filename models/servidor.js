@@ -7,10 +7,9 @@ class Servidor {
 
     constructor() {
         this.aplicacion = express();
-        this.puerto = process.env.PUERTO;
+        this.puerto = process.env.PORT;
 
         this.directorios = {
-            categorias: '/api/categorias',
             materias: '/api/materias'
         }
 
@@ -44,7 +43,6 @@ class Servidor {
     }
 
     rutas() {
-        this.aplicacion.use(this.directorios.categorias, require('../routes/categorias'));
         this.aplicacion.use(this.directorios.materias, require('../routes/materias'));
     }
 

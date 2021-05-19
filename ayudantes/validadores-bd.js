@@ -1,13 +1,5 @@
-const { Categoria, Materia } = require('../models');
+const { Materia } = require('../models');
 
-
-const existeCategoriaPorId = async (id) => {
-
-    const existeCategoria = await Categoria.findById(id);
-    if (!existeCategoria) {
-        throw new Error(`El id no existe ${id}`);
-    }
-}
 
 const existeMateriaPorId = async (id) => {
 
@@ -19,7 +11,6 @@ const existeMateriaPorId = async (id) => {
 
 
 module.exports = {
-    existeCategoriaPorId,
     existeMateriaPorId
 }
 

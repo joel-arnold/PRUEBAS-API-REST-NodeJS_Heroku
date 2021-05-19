@@ -6,7 +6,7 @@ const { validarCampos } = require('../middlewares');
 const {
     obtenerMateria,
     obtenerMaterias
-} = require('../controllers/materias');
+} = require('../controladores/materias');
 const { existeMateriaPorId } = require('../ayudantes/validadores-bd');
 
 const router = Router();
