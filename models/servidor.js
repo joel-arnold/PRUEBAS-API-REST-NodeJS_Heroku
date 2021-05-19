@@ -3,13 +3,13 @@ const cors = require('cors');
 
 const { conexionBD } = require('../database/config');
 
-class Server {
+class Servidor {
 
     constructor() {
-        this.app = express();
-        this.port = process.env.PORT;
+        this.aplicacion = express();
+        this.puerto = process.env.PORT;
 
-        this.paths = {
+        this.directorios = {
             categorias: '/api/categorias',
             materias: '/api/materias'
         }
@@ -22,7 +22,7 @@ class Server {
         this.middlewares();
 
         // Rutas de mi aplicación
-        this.routes();
+        this.rutas();
     }
 
     async conectarBD() {
@@ -33,24 +33,24 @@ class Server {
     middlewares() {
 
         // CORS
-        this.app.use(cors());
+        this.aplicacion.use(cors());
 
         // Lectura y parseo del body
-        this.app.use(express.json());
+        this.aplicacion.use(express.json());
 
         // Directorio Público
-        this.app.use(express.static('publico'));
+        this.aplicacion.use(express.static('directorio_publico'));
 
     }
 
-    routes() {
-        this.app.use(this.paths.categorias, require('../routes/categorias'));
-        this.app.use(this.paths.materias, require('../routes/materias'));
+    rutas() {
+        this.aplicacion.use(this.directorios.categorias, require('../routes/categorias'));
+        this.aplicacion.use(this.directorios.materias, require('../routes/materias'));
     }
 
     escuchar() {
-        this.app.listen(this.port, () => {
-            console.log('Servidor corriendo en puerto', this.port);
+        this.aplicacion.listen(this.puerto, () => {
+            console.log('Servidor corriendo en puerto', this.puerto);
         });
     }
 
@@ -59,4 +59,4 @@ class Server {
 
 
 
-module.exports = Server;
+module.exports = Servidor;
