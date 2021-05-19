@@ -7,7 +7,7 @@ const {
     obtenerMateria,
     obtenerMaterias
 } = require('../controllers/materias');
-const { existeMateriaPorId } = require('../helpers/db-validators');
+const { existeMateriaPorId } = require('../ayudantes/validadores-bd');
 
 const router = Router();
 
